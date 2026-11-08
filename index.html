@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roshan — Solar Panel Planner &amp; Scam Checker (UX Concept)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="logo">R</span> Roshan</div>
+  <p class="tagline">Sunlight you own. Bills you don't. — Solar panel planner &amp; scam checker for Pakistan</p>
+  <p class="sample-note">SAMPLE DATA — every quote, serial number, installer and figure shown here is invented for this UX concept demo. No real installer, panel serial, or person appears. Roshan is an unofficial concept, not a solar company: always confirm prices, warranties and net-metering status with the installer and your electricity provider before paying anyone anything.</p>
+</header>
+
+<main>
+  <!-- Quote comparator -->
+  <section class="card">
+    <p class="eyebrow">QUOTE COMPARE</p>
+    <h2>Same 5kW system. Three very different prices.</h2>
+    <p class="hint">Three quotes for the same 5kW system in Pakistan. The cheapest quote is not the best value — a verified installer with real panels and a 25-year warranty is.</p>
+    <div id="quote-list"></div>
+    <p id="quote-summary"></p>
+  </section>
+
+  <!-- Payback calculator -->
+  <section class="card">
+    <p class="eyebrow">PAYBACK CALCULATOR</p>
+    <h2>What will solar save you each month?</h2>
+    <p class="hint">Type your monthly WAPDA bill. Roshan sizes the system from it, works out your monthly saving, and shows the payback in months.</p>
+    <div class="verify-row">
+      <label>Your monthly WAPDA bill (Rs)
+        <input id="bill-input" type="number" min="0" step="1000" value="25000">
+      </label>
+      <button id="bill-btn">Calculate payback</button>
+    </div>
+    <p class="hint">Try: Rs 25,000 (5kW, saves Rs 21,800 a month, payback 33 months).</p>
+    <div id="payback-result"></div>
+  </section>
+
+  <!-- Panel serial checker -->
+  <section class="card">
+    <p class="eyebrow">AUTHENTICITY CHECKER</p>
+    <h2>Is this panel genuine — or fake?</h2>
+    <p class="hint">Check a panel serial number before you pay. A genuine panel is in the manufacturer database; a fake one is not.</p>
+    <div class="verify-row">
+      <label>Panel serial number
+        <input id="serial-input" type="text" value="ROS-2026-4812" spellcheck="false">
+      </label>
+      <button id="serial-btn">Check serial</button>
+    </div>
+    <p class="hint">Try: ROS-2026-4812 (genuine Longi Hi-MO 7), ROS-2026-077 (counterfeit warning).</p>
+    <div id="serial-result"></div>
+  </section>
+
+  <!-- Net-metering tracker -->
+  <section class="card">
+    <p class="eyebrow">NET METERING</p>
+    <h2>Where is your net-metering application?</h2>
+    <p class="hint">Net metering takes about 45 days on average. Track the application stage by stage — applied, inspection, meter installed, billing started.</p>
+    <div id="netmeter-result"></div>
+  </section>
+
+  <!-- Installer verification -->
+  <section class="card">
+    <p class="eyebrow">INSTALLER VERIFICATION</p>
+    <h2>Can this installer prove who they are?</h2>
+    <p class="hint">A verified installer can show an NTN, a warranty card in writing, and a written contract. An unverified one cannot.</p>
+    <div id="installer-list"></div>
+  </section>
+
+  <!-- Saved-quote checklist -->
+  <section class="card">
+    <p class="eyebrow">BEFORE YOU PAY</p>
+    <h2>Your saved-quote checklist</h2>
+    <p class="hint">Tick each safety check off before paying an installer — your checklist is saved on this device.</p>
+    <p id="checklist-progress"></p>
+    <ul id="checklist"></ul>
+  </section>
+
+  <!-- Scam spotter -->
+  <section class="card">
+    <p class="eyebrow">SCAM SPOTTER</p>
+    <h2>Eight ways a solar seller can cheat you</h2>
+    <p class="hint">If any of these shows up, stop and verify the installer yourself — before paying anyone anything.</p>
+    <ul id="red-flags" class="flags-list"></ul>
+  </section>
+
+  <button id="reset-demo" class="secondary">Reset demo data</button>
+</main>
+
+<footer>
+  <p>Roshan is an unofficial UX concept by Muhammad Abbas Khan — not a real solar company.</p>
+  <p>Available for new projects: abbasmomand98@gmail.com</p>
+</footer>
+
+<script src="data.js"></script>
+<script src="logic.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
